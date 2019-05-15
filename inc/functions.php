@@ -1,11 +1,12 @@
 <?php
-function get_item_html($id, $item) {
-	$output =  "<li><a href='#'><img src='"
-	.$item["img"]. "'alt='"
-	.$item["title"]."' >"
-	."<p>View Details</p>"
-	."</a></li>";
-	return $output;
+function get_item_html($id,$item) {
+    $output = "<li><a href='details.php?id="
+        . $id . "'><img src='" 
+        . $item["img"] . "' alt='" 
+        . $item["title"] . "' />" 
+        . "<p>View Details</p>"
+        . "</a></li>";
+    return $output;
 }
 
 function array_category($catalog, $category) {
@@ -16,7 +17,7 @@ function array_category($catalog, $category) {
 			$sort = ltrim($sort, "The ");
 			$sort = ltrim($sort, "A ");
 			$sort = ltrim($sort, "And ");
-			$output[id] = $sort;
+			$output[$id] = $sort;
 		}
 	}
 	asort($output);
